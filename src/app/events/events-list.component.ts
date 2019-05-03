@@ -22,7 +22,7 @@ export class EventsListComponent {
         location: {
                 address: 'Some Street',
                 city: 'A Town',
-                county: 'Somewhere'
+                country: 'Somewhere'
         }
     }
 }
