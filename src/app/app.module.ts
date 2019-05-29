@@ -31,7 +31,14 @@ import { EventRouteActivator } from './events/event-details/event-route-activato
   providers: [
     EventService, 
     EventRouteActivator,
-    ToastrService],
+    ToastrService,
+    { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState },
+  ],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
+
+export function checkDirtyState() : boolean {
+
+  return true
+}
