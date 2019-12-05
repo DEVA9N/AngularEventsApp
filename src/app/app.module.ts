@@ -9,6 +9,7 @@ import {
   EventService,
   EventListResolver,
   EventRouteActivator,
+  CreateSessionComponent,
 } from './events/index' 
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
@@ -34,6 +35,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EventThumbnailComponent,
     NavBarComponent,
     CreateEventComponent,
+    CreateSessionComponent,
   ],
   providers: [
     // Note how the auth service is shared between modules if defined centrally
