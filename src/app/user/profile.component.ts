@@ -6,7 +6,7 @@ import { Router } from '@angular/router'
 @Component({
   templateUrl: './profile.component.html',
   styles: [`
-    em{float:right; color:#E05C65; padding-left: 10px;}
+    em {float:right; color:#E05C65; padding-left: 10px;}
     .error input {background-color:#E3C3C5;}
     .error ::-webkit-input-placeholder { color: #999; }
     .error ::-moz-placeholder { color: #999; }
@@ -17,15 +17,17 @@ import { Router } from '@angular/router'
 
 export class ProfileComponent implements OnInit {
   profileForm: FormGroup
-  lastName: FormControl
-  firstName: FormControl
+  private firstName: FormControl
+  private lastName: FormControl
 
   constructor(private router: Router, private authService: AuthService) {
 
   }
 
   ngOnInit(): void {
-    this.firstName = new FormControl(this.authService.currentUser.firstName, Validators.required)
+    this.firstName = new FormControl(
+      this.authService.currentUser.firstName, 
+      [Validators.required, Validators.pattern('[a-zA-Z].*')])
     this.lastName = new FormControl(this.authService.currentUser.lastName, Validators.required)
 
     this.profileForm = new FormGroup({
@@ -46,11 +48,11 @@ export class ProfileComponent implements OnInit {
   }
 
   validateFirstName() {
-    return this.firstName.valid || this.firstName.touched
+    return this.firstName.valid || this.firstName.untouched
   }
 
   validateLastName() {
-    return this.lastName.valid || this.lastName.touched
+    return this.lastName.valid || this.lastName.untouched
   }
 
 }

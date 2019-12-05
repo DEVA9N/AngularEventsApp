@@ -10,7 +10,7 @@ export class AuthService {
             id: 1,
             userName: userName,
             firstName: 'Andre',
-            lastName: 'Super'
+            lastName: 'Janßen'
         }
 
         console.log('User ' + userName + ' logged in')
