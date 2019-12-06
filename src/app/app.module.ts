@@ -14,7 +14,7 @@ import {
 } from './events/index' 
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
-import { ToastrService } from './common/toastr.service';
+import { ToastrService, CollapsibleWellComponent } from './common/index';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { Error404Component } from './errors/404.component';
@@ -38,6 +38,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreateEventComponent,
     CreateSessionComponent,
     SessionListComponent,
+    CollapsibleWellComponent,
   ],
   providers: [
     // Note how the auth service is shared between modules if defined centrally
