@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core'
 import { Subject, Observable } from 'rxjs';
-import { timeout } from 'q';
 import { IEvent } from './event.model';
-import { EventsAppComponent } from 'src/app/events-app.component';
-
 
 @Injectable()
 export class EventService {
-  
+
   getEvents(): Observable<IEvent[]> {
     let subject = new Subject<IEvent[]>()
     setTimeout(() => { subject.next(EVENTS); subject.complete(); }, 100)
@@ -20,9 +17,15 @@ export class EventService {
   }
 
   saveEvent(event) {
-    event.id=999
-    event.sessions=[]
+    event.id = 999
+    event.sessions = []
     EVENTS.push(event)
+  }
+
+  updateEvent(event: IEvent) {
+    let index = EVENTS.findIndex(x => x.id == event.id)
+
+    EVENTS[index] = event
   }
 
 }
