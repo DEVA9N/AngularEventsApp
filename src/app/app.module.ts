@@ -11,6 +11,7 @@ import {
   EventRouteActivator,
   CreateSessionComponent,
   SessionListComponent,
+  DurationPipe,
 } from './events/index' 
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
@@ -39,6 +40,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
+    DurationPipe,
   ],
   providers: [
     // Note how the auth service is shared between modules if defined centrally
