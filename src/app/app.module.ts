@@ -15,12 +15,15 @@ import {
 } from './events/index' 
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
-import { ToastrService, CollapsibleWellComponent } from './common/index';
+import { TOASTR_TOKEN, Toastr } from './common/index';
+import { CollapsibleWellComponent } from './common/index';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+declare let toastr: Toastr
 
 @NgModule({
   imports: [
@@ -48,7 +51,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EventService, 
     EventListResolver,
     EventRouteActivator,
-    ToastrService,
+    { provide: TOASTR_TOKEN, useValue: toastr },
     { provide: 'canDeactivateCreateEvent', useValue: canLeavePage },
   ],
   bootstrap: [EventsAppComponent]
