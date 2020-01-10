@@ -12,6 +12,7 @@ import { JQ_TOKEN } from './jQuery.service'
 export class SimpleModalComponent {
     @Input() title: String
     @Input() elementId: String
+    @Input() closeOnBodyClick: String
     @ViewChild('modalcontainer') container: ElementRef
 
     constructor(@Inject(JQ_TOKEN) private $: any) {
@@ -19,6 +20,8 @@ export class SimpleModalComponent {
     }
 
     closeModal() {
-         this.$(this.container.nativeElement).modal('hide')
+        if (this.closeOnBodyClick.toLocaleLowerCase() === "true") {
+            this.$(this.container.nativeElement).modal('hide')
+        }
     }
 }
