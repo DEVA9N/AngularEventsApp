@@ -41,6 +41,10 @@ export class SessionListComponent implements OnChanges {
         }
     }
 
+    canVote(): boolean {
+        return this.authService.isAuthenticated()
+    }
+
     toggleVote(session: ISession) {
         if (this.userHasVoted(session)) {
             this.voterService.removeVote(session, this.authService.currentUser.userName)
