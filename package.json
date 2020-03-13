@@ -12,28 +12,29 @@
   "private": true,
   "dependencies": {
     "@angular-devkit/schematics": "^9.0.6",
-    "@angular/animations": "^7.2.16",
-    "@angular/common": "^7.2.16",
-    "@angular/compiler": "^7.2.16",
-    "@angular/core": "^7.2.16",
-    "@angular/forms": "^7.2.16",
-    "@angular/platform-browser": "^7.2.16",
-    "@angular/platform-browser-dynamic": "^7.2.16",
-    "@angular/router": "^7.2.16",
+    "@angular/animations": "^9.0.6",
+    "@angular/cli": "^9.0.6",
+    "@angular/common": "^9.0.6",
+    "@angular/compiler": "^9.0.6",
+    "@angular/core": "^9.0.6",
+    "@angular/forms": "^9.0.6",
+    "@angular/platform-browser": "^9.0.6",
+    "@angular/platform-browser-dynamic": "^9.0.6",
+    "@angular/router": "^9.0.6",
     "core-js": "^2.6.11",
     "jquery": "^3.4.1",
     "ngf-bootstrap": "0.0.5",
     "ngf-server": "^1.0.2",
     "node-sass": "^4.13.1",
-    "rxjs": "~6.3.3",
+    "rxjs": "~6.5.4",
     "toastr": "^2.1.4",
     "tslib": "^1.11.1",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.900.6",
-    "@angular/compiler-cli": "^7.2.16",
-    "@angular/language-service": "^7.2.16",
+    "@angular/compiler-cli": "^9.0.6",
+    "@angular/language-service": "^9.0.6",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "~8.9.4",
@@ -48,6 +49,6 @@
     "protractor": "^5.4.3",
     "ts-node": "~7.0.0",
     "tslint": "^5.20.1",
-    "typescript": "~3.2.2"
+    "typescript": "~3.7.5"
   }
 }

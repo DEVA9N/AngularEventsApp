@@ -13,7 +13,7 @@ export class SimpleModalComponent {
     @Input() title: String
     @Input() elementId: String
     @Input() closeOnBodyClick: String
-    @ViewChild('modalcontainer') container: ElementRef
+    @ViewChild('modalcontainer', { static: true }) container: ElementRef
 
     constructor(@Inject(JQ_TOKEN) private $: any) {
 

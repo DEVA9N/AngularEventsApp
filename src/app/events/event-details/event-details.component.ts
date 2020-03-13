@@ -2,7 +2,6 @@ import { Component } from '@angular/core'
 import { EventService } from '../shared/event.service'
 import { ActivatedRoute, Params } from '@angular/router';
 import { IEvent, ISession } from '../shared';
-import { resetComponentState } from '@angular/core/src/render3/state';
 
 @Component({
     templateUrl: './event-details.component.html',
