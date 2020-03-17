@@ -11,6 +11,8 @@ export class EventListResolver implements Resolve<any> {
     }
   
     resolve() {
-        return this.eventService.getEvents().pipe(map(events => events))
+        // subscribe is required because the http call only is executed if someone is subscribed
+        // return this.eventService.getEvents().subscribe()
+        return this.eventService.getEvents()
     }
 }
