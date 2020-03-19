@@ -11,8 +11,7 @@ export class EventListResolver implements Resolve<any> {
     }
   
     resolve() {
-        // subscribe is required because the http call only is executed if someone is subscribed
-        // return this.eventService.getEvents().subscribe()
+        // Resolver automatically subscribes to observable
         return this.eventService.getEvents()
     }
 }
