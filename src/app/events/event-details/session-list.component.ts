@@ -12,6 +12,7 @@ export class SessionListComponent implements OnChanges {
     @Input() sessions: ISession[]
     @Input() filterBy: string
     @Input() sortBy: string
+    @Input() eventId: number
     visibleSessions: ISession[] = []
 
     constructor(private authService: AuthService, private voterService: VoterService) {
@@ -47,9 +48,9 @@ export class SessionListComponent implements OnChanges {
 
     toggleVote(session: ISession) {
         if (this.userHasVoted(session)) {
-            this.voterService.removeVote(session, this.authService.currentUser.userName)
+            this.voterService.removeVote(this.eventId, session, this.authService.currentUser.userName)
         } else {
-            this.voterService.addVote(session, this.authService.currentUser.userName)
+            this.voterService.addVote(this.eventId, session, this.authService.currentUser.userName)
         }
 
         if (this.sortBy === "votes") {
