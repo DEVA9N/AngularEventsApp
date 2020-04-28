@@ -13,15 +13,23 @@ export class LoginComponent {
     username
     password
     mouseoverLogin
-    
+    loginValid
+
     constructor(private auth: AuthService, private router: Router) {
 
     }
 
     login(formValues) {
         this.auth.loginUser(formValues.userName, formValues.password)
+            .subscribe(response => {
+                if (!response) {
+                    this.loginValid = false
+                } else {
+                    this.loginValid = true
 
-        this.router.navigate(['events'])
+                    this.router.navigate(['events'])
+                }
+            })
     }
 
     cancel() {
