@@ -18,8 +18,8 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li>
-              <a href="">Angular Connect</a>
+            <li *ngFor="let event of events" >
+              <a href="/events/{{event.id}}">{{event.name}}</a>
             </li>
           </ul>
         </li>
@@ -34,12 +34,9 @@
       </div>
       <form id="searchForm" (ngSubmit)="searchSessions(searchTerm)" class="navbar-form navbar-right">
         <div class="form-group">
-          <input type="text" [(ngModel)]="searchTerm" name="searchTerm" class="form-control"
-            placeholder="Search Sessions">
+          <input type="text" [(ngModel)]="searchTerm" name="searchTerm" class="form-control" placeholder="Search Sessions">
         </div>
-        <button class="btn btn-default" modal-trigger="searchResults">
-          Search
-        </button>
+        <button class="btn btn-default" modal-trigger="searchResults">Search</button>
       </form>
     </div>
   </div>

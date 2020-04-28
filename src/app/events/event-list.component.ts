@@ -4,17 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IEvent } from './shared';
 
 @Component({
-    template: `
-    <div>
-        <h1>Upcoming Angular Events</h1>
-        <hr>
-        <div class="row">
-            <div *ngFor="let event of events" class="col-md-5">
-                <event-thumbnail (click)="handleThumbnailClick(event.Name)" [event]="event"></event-thumbnail>
-            </div>
-        </div>
-    </div>
-    `
+  templateUrl: './event-list.component.html',
 })
 
 export class EventListComponent implements OnInit {
