@@ -54,6 +54,13 @@ export class ProfileComponent implements OnInit {
     this.router.navigate(['events'])
   }
 
+  logout(){
+    this.authService.logoutUser()
+    .subscribe(() =>{
+      this.router.navigate(["/user/login"])
+    })
+  }
+
   validateFirstName() {
     return this.firstName.valid || this.firstName.untouched
   }
